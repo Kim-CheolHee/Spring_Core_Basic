@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration // 설정
-public class AppConfig {
+public class AppConfig { // 팩토리 메서드
 
     @Bean // spring 컨테이너에 자동 등록 됨
     public MemberService memberService(){ // 역할

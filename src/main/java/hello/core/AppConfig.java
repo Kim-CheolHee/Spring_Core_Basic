@@ -17,16 +17,19 @@ public class AppConfig { // 팩토리 메서드
 
     @Bean // spring 컨테이너에 자동 등록 됨
     public MemberService memberService(){ // 역할
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public MemberRepository memberRepository() { // 구현
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService(){
+        System.out.println("call  AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 

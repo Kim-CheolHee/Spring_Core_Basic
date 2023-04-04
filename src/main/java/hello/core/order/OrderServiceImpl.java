@@ -13,10 +13,15 @@ public class OrderServiceImpl implements OrderService{
     private MemberRepository memberRepository;
     private DiscountPolicy discountPolicy;
     //    private final DiscountPolicy discountPolicy = new FixDiscountPolicy(); // 구현클래스에 의존
-//    private final DiscountPolicy discountPolicy = new RateDiscountPolicy(); // 구현클래스에 의존
+    //    private final DiscountPolicy discountPolicy = new RateDiscountPolicy(); // 구현클래스에 의존
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy){
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }

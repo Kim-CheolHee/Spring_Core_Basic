@@ -1,7 +1,6 @@
 package hello.core;
 
 import hello.core.discount.DiscountPolicy;
-import hello.core.discount.FixDiscountPolicy;
 import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemberService;
@@ -15,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration // 설정
 public class AppConfig { // 팩토리 메서드
 
-    @Bean // spring 컨테이너에 자동 등록 됨
+    @Bean // spring 컨테이너에 자동 등록
     public MemberService memberService(){ // 역할
         System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());

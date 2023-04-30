@@ -35,7 +35,7 @@ public class AppConfig { // 팩토리 메서드
 
     @Bean
     public DiscountPolicy discountPolicy(){
-//        return new FixDiscountPolicy();
+//        return new FixDiscountPolicy(); //
         return new RateDiscountPolicy();
     }
 }
